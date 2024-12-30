@@ -1,4 +1,4 @@
-import { type LucideIcon, Package, MapPin, Briefcase, Info } from 'lucide-react';
+import { type LucideIcon,MapPin, Briefcase, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 

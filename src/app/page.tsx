@@ -1,117 +1,123 @@
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Lightbulb, Rocket, Users } from 'lucide-react'
-import Link from "next/link"
+import { Card } from "@/components/ui/card"
+import { Star, Users, Building2, Globe } from 'lucide-react'
 
 export default function LandingPage() {
+  const partners = [
+    { name: 'ZVIA Tech', logo: 'https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?w=800&auto=format&fit=crop&q=60' },
+    { name: 'MedX AI Innovations', logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60' },
+    { name: 'Stemtec AI & Robotics', logo: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=60' },
+    { name: 'CracKube', logo: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&auto=format&fit=crop&q=60' },
+    { name: 'Quinproc LLP', logo: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60' },
+    { name: 'Mechonyx Automation', logo: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60' },
+    { name: 'Mafkin Robotics', logo: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=60' },
+    { name: 'Chakaralaya Analytics', logo: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60' },
+  ]
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-purple-200">
-      <header className="bg-purple-800 text-white py-6">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold">VNest</h1>
-          <p className="mt-2">Innovation and Entrepreneurship Ecosystem at VIT Chennai</p>
-        </div>
-      </header>
+    <main className="min-h-screen relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 animate-gradient bg-[length:200%_200%]" />
+      
+      {/* Content */}
+      <div className="relative">
+        {/* Hero Section */}
+        <section className="relative px-6 lg:px-8 py-12 md:py-24">
+          <div className="absolute top-4 left-4">
+            <Image
+              src="/placeholder.svg"
+              alt="VIT Logo"
+              width={60}
+              height={60}
+              className="rounded-full bg-white p-2"
+            />
+          </div>
+          
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                  V-NEST: <br />
+                  Empowering Visionaries, Building Tomorrow
+                </h1>
+                
+                <p className="text-xl text-white/80">
+                  Your Launchpad for Innovation, Growth, and Global Impact
+                </p>
+                
+                <Button variant="secondary" size="lg" className="bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20">
+                  Catalogue
+                </Button>
 
-      <main className="container mx-auto px-4 py-12">
-        <section className="mb-16 text-center">
-          <h2 className="text-3xl font-bold text-purple-900 mb-4">Welcome to V-NEST</h2>
-          <p className="text-lg text-purple-800 max-w-3xl mx-auto">
-            VIT Chennai Startup and Research Foundation supporting students and faculty in transforming their ideas into viable businesses.
-          </p>
-          <Link href={"/dashboard"}>
-          <Button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white">
-            Go to Dashboard
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-          </Link>
-        </section>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="bg-white shadow-lg">
-            <CardHeader>
-              <Lightbulb className="h-8 w-8 text-purple-600 mb-2" />
-              <CardTitle className="text-purple-800">Innovation Hub</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Established in 2019, V-NEST promotes start-ups and nurtures students in building their own businesses.</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white shadow-lg">
-            <CardHeader>
-              <Rocket className="h-8 w-8 text-purple-600 mb-2" />
-              <CardTitle className="text-purple-800">Focus Areas</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Key sectors include Health Tech, Clean Energy, IOT, IT, Edu Tech, and Robotics, aligning with Tamil Nadu's economic priorities.</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white shadow-lg">
-            <CardHeader>
-              <Users className="h-8 w-8 text-purple-600 mb-2" />
-              <CardTitle className="text-purple-800">Thriving Ecosystem</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Supporting over 30 Start-up Companies and 20+ student-run start-ups at various growth stages.</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold text-purple-900 mb-4">Our Vision & Mission</h2>
-          <Card className="bg-white shadow-lg">
-            <CardContent className="grid md:grid-cols-2 gap-6 p-6">
-              <div>
-                <CardTitle className="text-purple-800 mb-2">Vision</CardTitle>
-                <CardDescription>
-                  To nurture society by encouraging entrepreneurs with integrity, sustainability, and innovation.
-                </CardDescription>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+                  <Card className="p-4 flex flex-col items-center text-center space-y-2 bg-white/10 backdrop-blur-sm border-white/20">
+                    <Star className="h-6 w-6 text-white" />
+                    <p className="text-sm text-white">Growth Industry Partnerships</p>
+                  </Card>
+                  <Card className="p-4 flex flex-col items-center text-center space-y-2 bg-white/10 backdrop-blur-sm border-white/20">
+                    <Building2 className="h-6 w-6 text-white" />
+                    <p className="text-sm text-white">World-Class Infrastructure</p>
+                  </Card>
+                  <Card className="p-4 flex flex-col items-center text-center space-y-2 bg-white/10 backdrop-blur-sm border-white/20">
+                    <Users className="h-6 w-6 text-white" />
+                    <p className="text-sm text-white">Global Collaboration Opportunities</p>
+                  </Card>
+                  <Card className="p-4 flex flex-col items-center text-center space-y-2 bg-white/10 backdrop-blur-sm border-white/20">
+                    <Globe className="h-6 w-6 text-white" />
+                    <p className="text-sm text-white">Unmatched Mentorship</p>
+                  </Card>
+                </div>
               </div>
-              <div>
-                <CardTitle className="text-purple-800 mb-2">Mission</CardTitle>
-                <CardDescription>
-                  To ignite entrepreneurial sparks, guide students from ideation to start-up, and connect start-ups with angel investors and venture capitalists.
-                </CardDescription>
+
+              <div className="relative">
+                <Card className="p-8 space-y-4 bg-white/10 backdrop-blur-sm border-white/20">
+                  <div className="flex justify-between items-center">
+                    <Image
+                      src="/placeholder.svg"
+                      alt="V-NEST Logo"
+                      width={120}
+                      height={40}
+                      className="bg-blue-600"
+                    />
+                    <span className="bg-white/20 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+                      Setting Industry Standards
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-white">
+                    VIT CHENNAI STARTUP AND RESEARCH FOUNDATION
+                  </h2>
+                  <p className="text-white/80">WE NURTURE YOU TO FLY HIGH</p>
+                </Card>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </section>
 
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold text-purple-900 mb-4">What We Offer</h2>
-          <Card className="bg-white shadow-lg">
-            <CardContent className="p-6">
-              <ul className="list-disc list-inside space-y-2 text-purple-800">
-                <li>Office space</li>
-                <li>Access to institutional infrastructure</li>
-                <li>Funding and research assistance</li>
-                <li>Consultancy and mentorship</li>
-                <li>Innovation and Start-up policy for students and faculty members</li>
-              </ul>
-            </CardContent>
-          </Card>
+        {/* Partners Section */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <Card className="p-8 bg-white/10 backdrop-blur-sm border-white/20">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {partners.map((partner, index) => (
+                  <div key={index} className="flex flex-col items-center space-y-4">
+                    <div className="relative w-24 h-24 rounded-lg overflow-hidden">
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="text-sm font-medium text-center text-white">{partner.name}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
         </section>
-
-        <section className="mt-16 text-center">
-          <h2 className="text-2xl font-bold text-purple-900 mb-4">Join the VNest Community</h2>
-          <p className="text-lg text-purple-800 max-w-3xl mx-auto mb-6">
-            Be part of our mission to create 100+ start-ups that will drive the country's economic growth.
-          </p>
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white" >
-            Go to Dashboard
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </section>
-      </main>
-
-      <footer className="bg-purple-800 text-white py-6 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 VNest - VIT Chennai Startup and Research Foundation. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </main>
   )
 }
 
